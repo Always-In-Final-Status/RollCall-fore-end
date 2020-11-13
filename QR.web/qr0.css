@@ -1,0 +1,199 @@
+/* 全局 */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: white;
+  }
+  .w {
+    width: 100%;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  .clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .clearfix {
+    zoom: 1;
+  }
+  
+  /* 头部 */
+  .header {
+    height: 112px;
+    background-color: white;
+    margin-top: 10px;
+    line-height: 112px;
+  }
+  /* logo图标+名称 */
+  .log {
+    position: relative;
+    float: left;
+    height: 112px;
+    width: 230px;
+    margin-left: 112px;
+  }
+  /* logo图标 */
+  .log img {
+    position: absolute;
+    left: 0px;
+    top: 23px;
+    width: 84px;
+    height: 77px;
+  }
+  /* logo名称 */
+  .log p {
+    position: absolute;
+    right: 0px;
+    color: #69c7f0;
+    font-size: 52px;
+    font-weight: 700;
+  }
+  /* 教师名 */
+  .Tname {
+    float: right;
+    margin-right: 50px;
+    font-size: 25px;
+    color: #7f7f7f;
+  }
+  
+  /* 导航栏 */
+  .nav {
+    height: 56px;
+    background-color: #e0e0e0;
+    line-height: 56px;
+  }
+  /* 一级导航 */
+  .nav-pills {
+    float: left;
+    margin-left: 112px;
+  }
+  
+  .nav-pills > li {
+    float: left;
+    text-align: center;
+  }
+  .nav-pills > li > a {
+    display: block;
+    height: 56px;
+    border-radius: 6px;
+    font-size: 25px;
+    color:#7f7f7f;
+  }
+  .nav-pills > li > a:hover {
+    background-color: #d9001b;
+    color: #fff;
+  }
+  /* 二级导航 */
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background-color: #e0e0e0;
+  }
+  .dropdown-menu > li {
+    text-align: center;
+  }
+  .dropdown-menu > li > a {
+    display: block;
+    height: 56px;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #7f7f7f;
+  }
+  .dropdown-menu > li > a:hover {
+    background-color: #d9001b;
+    color: #fff;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  /* 设置 */
+  .setting {
+    display: block;
+    float: right;
+    width: 150px;
+    margin-right: 100px;
+    border-radius: 6px;
+    font-size: 25px;
+    text-align: center;
+    color: #7f7f7f;
+  }
+  .setting:hover {
+    background-color: #d9001b;
+    color: #fff;
+  }
+
+/*信息栏*/
+  .information{
+    margin:auto;
+    width:700px;
+    height:40px;
+    border:10px solid white;
+    background:#e0e0e0;
+    border-radius:10px;
+  }
+  .word0{
+    color:#7f7f7f;
+    font-size:20px;
+    text-align:center;
+    margin:1% 5% 5% 5%;
+  }
+
+  /*二维码点名*/
+  .box1{
+    width:150px;
+    height:60px;
+    background:#e0e0e0;
+    border-radius:10px;
+    margin:auto;
+  }
+  .pic1{
+    width:300px;
+    height:300px;
+    margin:10%;
+  }
+  .word2{
+    color:#7f7f7f;
+    font-size:25px;
+    text-align: center;
+    margin:0 0 0 20px;
+  }
+  .word1{
+    color:#7f7f7f;
+    font-size:20px;
+    text-align: center;
+  }
+
+/*提示信息*/
+  .footer{
+    margin-top:40px;
+  }
+  .mod_copyright {
+    text-align: center;
+    padding-top: 20px;
+    font-size:10px;
+  }
+  .links{
+    margin-bottom:15px;
+  }
+  .links a {
+    margin:0 3px;
+  }
+  .copyright{
+    line-height:20px;
+  }
+
