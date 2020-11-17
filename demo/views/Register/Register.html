@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap 4 CSS 文件 -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
+  <!-- 在下面添加自己的css -->
+  <link rel="stylesheet" href="../../assets/css/login.css">
+  
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header row align-cente"></div>
+    <div class="login row" style="background-color: #f1f1f1;">
+      <!-- LOGO -->
+      <div class="log col-md-6">
+        <img src="../../assets/img/log1.png">
+      </div>
+
+      <!-- 表单 -->
+      <div class="col-md-4">
+        <div class="row justify-content-center">
+          <h1>注册</h1>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" id="username">
+          </div>
+          <div class="form-group">
+            <label for="username">教工号</label>
+            <input type="text" class="form-control" id="tnum">
+          </div>
+          <div class="form-group">
+            <label for="pasd">密码</label>
+            <input type="password" class="form-control" id="pasd">
+          </div>
+          <div class="form-group">
+            <label for="username">邮箱</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="username">手机号</label>
+            <input type="text" class="form-control" id="pnum">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-7">
+              <label for="yanzheng">验证码</label>
+              <input type="text" class="form-control" id="yanzheng">
+            </div>
+            <button class="btn btn-primary col-md-5">获取手机验证码</button>
+          </div>
+          <div class="row justify-content-center">
+            <button type="button" onclick="onSubmit()" class="btn btn-primary col-md-3">注册</button>
+          </div>
+          <div class="row justify-content-center">
+            <p class="col-md-4">已有账号?</p>
+            <a class="col-md-3" href="../../login.html">登录</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="row" style="height: 50px;background-color: #f1f1f1;"></div>
+    <div class="row justify-content-center footer">
+      <a class="col-md-1" href="#">关于我们</a>
+      <a class="col-md-1" href="#">网站地图</a>
+      <a class="col-md-1" href="#">版权声明</a>
+      <a class="col-md-1" href="#">招聘信息</a>
+      <a class="col-md-1" href="#">帮助中心</a>
+      <a class="col-md-1" href="#">在线客服</a>
+    </div>
+    <div class="row justify-content-center footer">
+      <div class="col-md-6">
+        邮编:350000 电话:XXXXXXXX 邮箱:XXXXXXX
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- JQuery 和 bootstrap4 js文件 -->
+  <script src="../../assets/js/jquery-3.5.1.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- 在下面添加自己的js -->
+
+</body>
+</html>
