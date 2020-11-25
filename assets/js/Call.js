@@ -87,4 +87,7 @@ function Go(e){
     $('#QQ').click(function(k){
       $(location).attr('href', 'QR_call.html');
     });
+    $('#RR').click(function(k){
+      $(location).attr('href', 'R_call.html');
+    });
   }
