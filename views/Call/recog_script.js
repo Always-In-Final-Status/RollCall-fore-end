@@ -119,12 +119,12 @@ function toEnd(){
   // alert(classindex)
   var week=JSON.parse(localStorage.getItem("obj_WEEK")).code
   var Tid=JSON.parse(localStorage.getItem("obj_TID")).code
-
+  var Tname=JSON.parse(localStorage.getItem("obj_TNAME")).code
   console.log(result);
   $.ajax({
     type:'get',
     url:'https://813f1298-ee3b-4e8e-b30d-3d36891afeb6.bspapp.com/http/face_recognition',
-    data:{"DAO":result,"WEEKDAY":weekday,"WEEK":week,"CLASSINDEX":classindex,"CID":cid,"TID":Tid},
+    data:{"DAO":result,"WEEKDAY":weekday,"WEEK":week,"CLASSINDEX":classindex,"CID":cid,"TID":Tid,"TNAME":Tname},
     dataType:"json",
     success:function(data){
     if(data.status==0)

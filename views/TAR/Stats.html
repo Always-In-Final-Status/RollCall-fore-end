@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../assets/css/base.css">
   <link rel="stylesheet" href="../../assets/css/schedule.css">
 
-  <title>Document</title>
+  <title>e点名</title>
 </head>
 <body>
   <div class="container">
@@ -21,8 +21,8 @@
       </div>
       <div class="col-md-4 col-sm-3"></div>
       <div class="Tname col-md-4 col-sm-5 ">
-        <p>上午好！
-          <a class="text-wrap" href="../Schedule.html">柯逍</a>
+        <p><span id="welcome"></span>
+          <a class="text-wrap" href="#" id="tname"></a>
           老师
         </p>
       </div>
@@ -53,9 +53,14 @@
               设置
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" onclick="return logout()" >退出账号</a>
+              <script language="javascript" type="text/javascript">
+                function logout(){
+                  if (confirm("您确定要退出账户吗？"))
+                    window.location = "../../login.html"
+                  return false;
+                }
+              </script>
             </div>
           </li>
         </ul>
@@ -123,6 +128,6 @@
   <script src="../../assets/js/bootstrap.min.js"></script>
   
   <!-- 在下面添加自己的js -->
-
+  <script src="../../assets/js/tname.js"></script>
 </body>
 </html>

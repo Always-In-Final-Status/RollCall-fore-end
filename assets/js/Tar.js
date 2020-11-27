@@ -1,4 +1,5 @@
 var tid=JSON.parse(localStorage.getItem("obj_userID")).code
+var tname=JSON.parse(localStorage.getItem("obj_TNAME")).code
 $.ajax({
   type:'get',
   url:'https://813f1298-ee3b-4e8e-b30d-3d36891afeb6.bspapp.com/http/get_table',
@@ -46,6 +47,7 @@ function Go(e){
     var TID = k.attr('TID');
     var WEEKDAY = k.attr('WEEKDAY');
     var CLASSINDEX = k.attr('CLASSINDEX');
+    var WEEK = k.parent().parent().parent().parent().prev().text().slice(1,-1);
 
     $('#HH').unbind('click').click(function(k){
       localStorage.setItem("obj_CID",JSON.stringify({
@@ -62,9 +64,31 @@ function Go(e){
       }))
       localStorage.setItem("obj_CLASSINDEX",JSON.stringify({
           obj_name:"CLASSINDEX",
-          code:CLASSINDEX
+          code:CLASSINDEX    
       }))
-      $(location).attr('href', 'Htar.html');
+      localStorage.setItem("obj_WEEK",JSON.stringify({
+        obj_name:"WEEK",
+        code:WEEK
+      }))
+
+      $.ajax({
+        type:'get',
+        url:'https://813f1298-ee3b-4e8e-b30d-3d36891afeb6.bspapp.com/http/show_historyTable',
+        contentType:'application/json',
+        data:{"CID":CID,"TID":TID,"WEEKDAY":WEEKDAY,"WEEK":WEEK,"CLASSINDEX":CLASSINDEX,"TNAME":tname},
+        dataType:"json",
+        success:function(data){
+          if(data.status==0)
+          {
+            alert("查询失败");
+          }else{
+            $(location).attr('href', 'Htar.html');
+          }
+        },
+        error:function(data){
+          alert("网络错误");
+        }
+       });
     });
 
     $('#PP').unbind('click').click(function(k){

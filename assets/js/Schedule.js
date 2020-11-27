@@ -1,4 +1,5 @@
 var tid=JSON.parse(localStorage.getItem("obj_userID")).code
+
 $.ajax({
   type:'get',
   url:'https://813f1298-ee3b-4e8e-b30d-3d36891afeb6.bspapp.com/http/get_table',

@@ -5,6 +5,11 @@
 }
 body {
   background-color: #d8d8d8;
+  background-image: url("../img/back.jpg");
+}
+div.transbox
+{
+  opacity:0.7;
 }
 a {
   color: #7f7f7f;
