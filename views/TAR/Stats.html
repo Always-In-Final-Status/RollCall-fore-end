@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap 4 CSS 文件 -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
+  <!-- 在下面添加自己的css -->
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/schedule.css">
+
+  <title>e点名</title>
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <div class="header row justify-content-between">
+      <div class="log col-md-4 col-sm-4">
+        <img src="../../assets/img/log.png" alt="logo">
+      </div>
+      <div class="col-md-4 col-sm-3"></div>
+      <div class="Tname col-md-4 col-sm-5 ">
+        <p><span id="welcome"></span>
+          <a class="text-wrap" href="#" id="tname"></a>
+          老师
+        </p>
+      </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="row navbar navbar-expand-md navbar-light" style="background-color: #e0e0e0;">
+      <a class="navbar-brand" href="#">e点名</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../Schedule.html">课程表</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Tar.html">考勤记录</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Call/Call.html">开始点名</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto setting">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              设置
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" onclick="return logout()" >退出账号</a>
+              <script language="javascript" type="text/javascript">
+                function logout(){
+                  if (confirm("您确定要退出账户吗？"))
+                    window.location = "../../login.html"
+                  return false;
+                }
+              </script>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <!-- 课程表-->
+    <div class="center row justify-content-center align-items-center">
+        <div class="tab col-md-10">
+            <table class="table table-bordered" style="word-break:break-all;word-wrap:break-all;">
+              <tr>
+                <th scope="col">学生姓名</th>
+                <th scope="col">学号</th>
+                <th scope="col">累计出勤次数</th>
+                <th scope="col">累计缺勤次数</th>
+                <th scope="col">平时分</th>
+              </tr>
+              <tr>
+                <td>啊啊啊啊·啊啊啊啊</td>
+                <td>111111111</td>
+                <td>12</td>
+                <td>1</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>张三</td>
+                <td>111111111</td>
+                <td>12</td>
+                <td>1</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>张三</td>
+                <td>111111111</td>
+                <td>12</td>
+                <td>1</td>
+                <td>13</td>
+              </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="row" style="height: 50px;background-color: #f1f1f1;"></div>
+    <div class="row justify-content-center footer">
+      <a class="col-md-1" href="#">关于我们</a>
+      <a class="col-md-1" href="#">网站地图</a>
+      <a class="col-md-1" href="#">版权声明</a>
+      <a class="col-md-1" href="#">招聘信息</a>
+      <a class="col-md-1" href="#">帮助中心</a>
+      <a class="col-md-1" href="#">在线客服</a>
+    </div>
+    <div class="row justify-content-center footer">
+      <div class="col-md-6">
+        邮编:350000 电话:XXXXXXXX 邮箱:XXXXXXX
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- JQuery 和 bootstrap4 js文件 -->
+  <script src="../../assets/js/jquery-3.5.1.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- 在下面添加自己的js -->
+  <script src="../../assets/js/tname.js"></script>
+</body>
+</html>

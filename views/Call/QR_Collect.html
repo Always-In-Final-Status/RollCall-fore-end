@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <script src="../../assets/js/jquery-3.5.1.min.js"></script>
+    <script>
+        //屏蔽网页端刷新
+        document.onkeydown = function(e) {
+            e = window.event || e;
+            var k = e.keyCode;
+            //屏蔽ctrl+R，F5键，ctrl+F5键  F3键！验证
+            if ((e.ctrlKey == true && k == 82) || (k == 116)
+                || (e.ctrlKey == true && k == 116)||k==114) {
+                e.keyCode = 0;
+                alert("当前页面不能刷新！");
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+
+            }
+            if (k == 8) {
+                alert("不能返回或后退！");
+                e.keyCode = 0;
+                e.returnValue = false;
+                return false;
+            }
+            //屏蔽 Ctrl+n   验证可以实现效果
+            if (e.ctrlKey && k == 78){
+                e.keyCode = 0;
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+            }
+            //屏蔽F11   验证可以实现效果
+            if (k == 122) {
+                e.keyCode = 0;
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+            }
+            //屏蔽 shift+F10  验证可以实现效果
+            if ((e.shiftKey && k == 121)||(e.ctrlKey && k == 121)){
+                e.keyCode = 0;
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+            }
+
+            //屏蔽Alt+F4
+            if ((e.altKey) && (k== 115)) {
+                window.showModelessDialog("about:blank", "",
+                    "dialogWidth:1px;dialogheight:1px");
+                e.keyCode = 0;
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+            }
+            //屏蔽 Alt+ 方向键 ← ;屏蔽 Alt+ 方向键 → ！验证
+            if ((e.altKey)
+                && ((k == 37) || (k == 39))) {
+                alert("不准你使用ALT+方向键前进或后退网页！");
+                e.keyCode = 0;
+                e.returnValue = false;
+                e.cancelBubble = true;
+                return false;
+            }
+
+        };
+
+        //屏蔽右键菜单，！验证
+        document.oncontextmenu = function(event) {
+            if (window.event) {
+            event = window.event;
+        }
+        try {
+            var the = event.srcElement;
+            if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+                return false;
+            }
+            return true;
+        } catch (e) {
+            return false;
+        }
+        };
+    </script>
+<script>
+    var weekday;
+    var classindex;
+    var week;
+    var cid;
+    function get_content()//提交操作
+    {
+        var number=document.getElementById("input_number").value;
+        var name=document.getElementById("input_name").value;
+        var w = GetRequest();//获取参数
+        //document.write(name+number);
+        document.getElementById("submit").disabled=true;
+        // document.write(number+" "+weekday+" "+week+" "+classindex+" "+CID+" "+name);
+        $.ajax({
+            type:'get',
+            url:'https://813f1298-ee3b-4e8e-b30d-3d36891afeb6.bspapp.com/http/QRCode_set',
+            data:{"SID":number,"WEEKDAY":w.weekday,"WEEK":w.week,"CLASSINDEX":w.classindex,"CID":w.cid,"TID":w.tid},
+            dataType:"json",
+            success:function(data){
+                if(data.status==0)
+                {
+                    alert("提交失败！");
+                }
+                else
+                {
+                alert("提交成功！")}
+            }
+        });
+    }
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    // function loadXMLDoc()
+// {
+// 	var xmlhttp;
+// 	if (window.XMLHttpRequest)
+// 	{
+// 		// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+// 		xmlhttp=new XMLHttpRequest();
+// 	}
+// 	else
+// 	{
+// 		// IE6, IE5 浏览器执行代码
+// 		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+// 	}
+// 	xmlhttp.onreadystatechange=function()
+// 	{
+// 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+// 		{
+// 			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+// 		}
+// 	}
+// 	xmlhttp.open("POST","123456.txt",true);
+// 	xmlhttp.send();
+// }
+    /*function get_parameter()//获取参数
+    {
+        var temp=new Date();
+        var day=temp.getDate();
+        weekday=temp.getDay();
+        var month=temp.getMonth()+1;
+        var year=temp.getFullYear();
+        var hour=temp.getHours();
+        var minute=temp.getMinutes();
+        if(weekday==0)
+        {
+            weekday=7;
+        }
+        if((hour==8&&minute>=10)||(hour==9))
+        {
+            classindex="1-2";
+        }
+        else if((hour==10&&minute>=10)||(hour==11))
+        {
+            classindex="3-4";
+        }
+        else if((hour==13&&minute>=50)||(hour==14)||(hour==15&&minute<=40))
+        {
+            classindex="5-6";
+        }
+        else if((hour==15&&minute>=50)||(hour==16)||(hour==17&&minute<=30))
+        {
+            classindex="7-8";
+        }
+        else
+        {
+            classindex="9-10";
+        }
+        if(month==11&&23<=day&&day<=29)
+        {
+            week=13;
+        }
+        else if((month==11&&day==30)||(month==12&&day<=6))
+        {
+            week=14;
+        }
+        else if(month==12&&7<=day&&day<=13)
+        {
+            week=15;
+        }
+        else if(month==12&&14<=day&&day<=20)
+        {
+            week=16;
+        }
+        else if(month==12&&21<=day&&day<=27)
+        {
+            week=17;
+        }
+        else if((month==12&&28<=day)||(month==1&&day<=3))
+        {
+            week=15;
+        }
+        else if(month==1&&4<=day<=10)
+        {
+            week=19;
+        }
+
+    }*/
+</script>
+</head>
+<body>
+
+<h2>二维码点名</h2>
+<input id="input_number"  type="text" placeholder="请输入您的学号" />
+<input id="input_name"  type="text" placeholder="请输入老师姓名" />
+<button type="button" id="submit" onclick="get_content()" >提交</button>
+</body>
+</html>
